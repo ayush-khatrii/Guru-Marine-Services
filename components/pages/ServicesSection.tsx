@@ -1,177 +1,107 @@
 "use client"
 
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card"
-import {
-  ShoppingCart,
-  Wrench,
-  Store,
-  Droplet,
-  Trash2,
-  Recycle,
-  ArrowRight,
-  Layers,
-} from "lucide-react"
+import { Mail, Phone, MapPin, Wrench, Ship, Package } from "lucide-react"
 
-const services = [
-  {
-    title: "Professional Ship Chandling",
-    description: "Serving as your essential link between shore and vessel. We provide high-quality provisions, technical stores ranging from OEM parts to maintenance consumables, and global 24/7 logistics.",
-    icon: ShoppingCart,
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800",
-    features: ["High-Quality Provisions", "Technical Stores & OEM Parts", "Barge & Truck Delivery", "Dietary Needs & Culture"],
-    href: "/services#ship-chandling",
-  },
-  {
-    title: "Marine Engineering & Ship Repairs",
-    description: "Our engineering division provides the technical expertise to maintain seaworthiness and structural integrity, specializing in minimizing downtime through efficient repair and maintenance cycles.",
-    icon: Wrench,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-    features: ["Afloat & Structural Repairs", "Propulsion & Machinery", "Hull & Underwater Maint.", "Drydocking Support"],
-    href: "/services#ship-repairs",
-  },
-  {
-    title: "Bonded Store Supply",
-    description: "We provide a wide range of duty-free goods under strict customs compliance, enhancing crew welfare and supporting passenger retail operations for long voyages.",
-    icon: Store,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c83a54?auto=format&fit=crop&q=80&w=800",
-    features: ["Luxury & Retail Goods", "Branded Spirits & Tobacco", "Crew Welfare Focus", "Customs Expertise & Seal Mgmt"],
-    href: "/services#bond-store",
-  },
-  {
-    title: "Potable Fresh Water Supply",
-    description: "Ensure your vessel has access to clean, safe, and WHO-standard potable water delivered directly to vessel tanks via our highly sanitary fleet of barges and trucks.",
-    icon: Droplet,
-    image: "https://images.unsplash.com/photo-1548834925-e48f8a27ae6f?auto=format&fit=crop&q=80&w=800",
-    features: ["Barge & Tanker Delivery", "WHO Standard Potable Water", "Strict Quality Control", "Sustainability Solutions"],
-    href: "/services#fresh-water",
-  },
-  {
-    title: "MARPOL-Compliant Garbage Disposal",
-    description: "We help shipowners navigate the complexities of environmental regulations through authorized, traceable garbage collection and eco-friendly management.",
-    icon: Trash2,
-    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800",
-    features: ["Annex V Compliance", "Segregated Waste Collection", "Transparent Traceability", "Eco-Friendly Processing"],
-    href: "/services#garbage-disposal",
-  },
-  {
-    title: "Sludge & Oily Waste Disposal",
-    description: "Specialized MARPOL Annex I services for safe and efficient removal of oily bilge water and sludge residues, utilizing double-hulled harbor vessels.",
-    icon: Recycle,
-    image: "https://images.unsplash.com/photo-1605626245464-9ed6340f10c6?auto=format&fit=crop&q=80&w=800",
-    features: ["Certified MARPOL Collection", "Safe Oily Waste Transfer", "Environmental Protection", "Comprehensive Documentation"],
-    href: "/services#sludge-disposal",
-  },
-]
-
-export default function ServicesSection() {
+export default function AboutServices() {
   return (
-    <section className="relative py-24 lg:py-32 bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <Badge
-            variant="secondary"
-            className="mb-4 gap-1.5 border border-border px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-primary"
-          >
-            <Layers className="size-3.5" />
-            Our Core Competencies
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Complete Marine Solutions
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Operating across all major Indian ports, we provide a comprehensive suite of maritime support solutions designed to ensure the operational readiness, safety, and compliance of the global merchant fleet.
-          </p>
-        </div>
+    <section className="w-full py-20 bg-[#f8fafc]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Services Cards Grid */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
-            >
-              {/* Image Header */}
-              <div className="relative h-48 w-full overflow-hidden bg-muted">
-                <img
-                  src={service.image || ""}
-                  alt={service.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                  <div className="flex size-8 items-center justify-center rounded-md bg-white/20 text-white backdrop-blur-md">
-                    <service.icon className="size-4" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white shadow-black/10 drop-shadow-sm">
-                    {service.title}
-                  </h3>
-                </div>
+        {/* Top Grid */}
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
+
+          {/* LEFT */}
+          <div>
+            <p className="text-sm tracking-widest text-blue-500 font-semibold mb-3">
+              WHO WE ARE
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Guru Marine <br />
+              <span className="text-blue-600">Services</span>
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed text-lg">
+              Operating at all India ports, Guru Marine Services delivers
+              top-tier ship chandling, repairs, and marine supply solutions.
+              We ensure reliability, compliance, and efficiency for vessels
+              across major and minor ports.
+            </p>
+
+            {/* Extra Value Line */}
+            <p className="text-gray-500 mt-4">
+              Trusted by industry professionals for fast response, quality
+              materials, and 24/7 operational support.
+            </p>
+          </div>
+
+          {/* RIGHT (Contact Card) */}
+          <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
+              Contact Information
+            </h3>
+
+            <div className="space-y-4 text-gray-600">
+
+              <div className="flex items-center gap-3">
+                <Mail className="text-blue-500 w-5 h-5" />
+                info@gurumarineservices.com
               </div>
 
-              <CardHeader className="pt-6">
-                <CardDescription className="text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
+              <div className="flex items-center gap-3">
+                <Phone className="text-blue-500 w-5 h-5" />
+                Sunil Khatri: +91 9825737080
+              </div>
 
-              <CardContent className="flex-1">
-                <ul className="flex flex-col gap-2.5">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
-                      <div className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
+              <div className="flex items-center gap-3">
+                <Phone className="text-blue-500 w-5 h-5" />
+                Varun Khatri: +91 9537080095
+              </div>
 
-              <CardFooter className="pb-6 pt-4">
-                <Button
-                  variant="outline"
-                  className="w-full gap-2 transition-colors hover:bg-primary hover:text-primary-foreground"
-                  asChild
-                >
-                  <Link href="/contact">
-                    Request {service.title}
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+              <div className="flex items-start gap-3">
+                <MapPin className="text-blue-500 w-5 h-5 mt-1" />
+                <span>
+                  S.F.X.-139, Gurunagar, Gandhidham <br />
+                  370 201 - Kutch - Gujarat - India
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm sm:flex-row sm:gap-6">
-            <div className="text-center sm:text-left">
-              <h3 className="text-lg font-semibold text-foreground">
-                In port right now? Need urgent supply?
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                Call our operations team at +91 9825737080 for immediate assistance round the clock.
-              </p>
-            </div>
-            <Button size="lg" asChild className="gap-2 shrink-0">
-              <Link href="/contact">
-                Contact Operations
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+        {/* SERVICES */}
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* CARD 1 */}
+          <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
+            <Ship className="text-blue-600 w-10 h-10 mb-4" />
+            <h4 className="text-xl font-semibold mb-3">Ship Chandling</h4>
+            <p className="text-gray-600">
+              Complete vessel supply solutions including provisions, bonded
+              stores, and essential consumables delivered efficiently.
+            </p>
           </div>
+
+          {/* CARD 2 */}
+          <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
+            <Package className="text-blue-600 w-10 h-10 mb-4" />
+            <h4 className="text-xl font-semibold mb-3">Marine Supplies</h4>
+            <p className="text-gray-600">
+              High-quality deck & engine stores, chemicals, lubricants,
+              and spare parts tailored to vessel requirements.
+            </p>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
+            <Wrench className="text-blue-600 w-10 h-10 mb-4" />
+            <h4 className="text-xl font-semibold mb-3">Ship Repairs</h4>
+            <p className="text-gray-600">
+              Reliable afloat repairs, maintenance, and technical support
+              to ensure uninterrupted vessel operations.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

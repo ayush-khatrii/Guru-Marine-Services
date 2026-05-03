@@ -1,27 +1,9 @@
 "use client"
 
 import React, { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Send, CheckCircle2, MessageSquare } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Send, CheckCircle2, Phone, Mail } from "lucide-react"
 
-interface ContactFormProps {
-  variant?: "standalone" | "embedded"
-}
-
-export default function ContactForm({ variant = "standalone" }: ContactFormProps) {
+export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,105 +14,100 @@ export default function ContactForm({ variant = "standalone" }: ContactFormProps
 
   if (submitted) {
     return (
-      <Card className={cn(variant === "embedded" && "border-0 shadow-none bg-transparent")}>
-        <CardContent className="flex flex-col items-center justify-center py-16 text-center">
-          <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-primary/10">
-            <CheckCircle2 className="size-8 text-primary" />
-          </div>
-          <h3 className="mb-2 text-xl font-semibold text-foreground">Message Sent!</h3>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            Thank you for reaching out to Guru Marine Services. We will get back to you immediately.
-          </p>
-        </CardContent>
-      </Card>
+      <div className="flex flex-col items-center justify-center py-20 text-center rounded-2xl bg-blue-50 border border-blue-100">
+        <CheckCircle2 className="size-12 text-blue-600 mb-4" />
+        <h3 className="text-2xl font-bold text-gray-900">Request Sent</h3>
+        <p className="text-gray-500 mt-2">
+          Our team will contact you shortly.
+        </p>
+      </div>
     )
   }
 
-  const formContent = (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="vesselName">Vessel Name</Label>
-          <Input id="vesselName" placeholder="MV Example" required />
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="port">Port Location in India</Label>
-          <Input id="port" placeholder="Kandla / Mumbai / etc." required />
-        </div>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="email">Email Address</Label>
-          <Input id="email" type="email" placeholder="captain@company.com" required />
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" type="tel" placeholder="+XX (XXX) 000-0000" />
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="service">Service Required</Label>
-        <Select>
-          <SelectTrigger id="service">
-            <SelectValue placeholder="Select a service" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="ship-chandling">Ship Chandling</SelectItem>
-            <SelectItem value="ship-repairs">Ship Repairs</SelectItem>
-            <SelectItem value="bond-store">Bond Store Suppliers</SelectItem>
-            <SelectItem value="fresh-water">Fresh Water Suppliers</SelectItem>
-            <SelectItem value="garbage-disposal">Garbage Disposal</SelectItem>
-            <SelectItem value="sludge-disposal">Sludge Disposal</SelectItem>
-            <SelectItem value="other">Other Inquiry</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <Label htmlFor="message">Message / Requisition List</Label>
-        <Textarea
-          id="message"
-          placeholder="Please provide your requisition details, repair scope, or disposal volumes..."
-          rows={5}
-          required
-        />
-      </div>
-
-      <Button type="submit" size="lg" className="mt-2 gap-2">
-        <Send className="size-4" />
-        Send Message
-      </Button>
-
-      <p className="text-center text-xs text-muted-foreground">
-        For immediate assistances at any India port, call +91 9825737080
-      </p>
-    </form>
-  )
-
-  if (variant === "embedded") {
-    return formContent
-  }
-
   return (
-    <Card>
-      <CardHeader>
-        <div className="mb-1">
-          <Badge
-            variant="secondary"
-            className="gap-1.5 border border-border px-3 py-1.5 text-xs font-medium uppercase tracking-wider"
-          >
-            <MessageSquare className="size-3.5 text-primary" />
-            Supply Requisition
-          </Badge>
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+
+      {/* HEADER */}
+      <div className="mb-6">
+        <p className="text-sm text-blue-600 font-semibold tracking-wide">
+          QUICK REQUEST
+        </p>
+        <h3 className="text-2xl font-bold text-gray-900">
+          Request Ship Supply
+        </h3>
+        <p className="text-gray-500 text-sm mt-1">
+          Get fast response across all Indian ports
+        </p>
+      </div>
+
+      {/* FORM */}
+      <form onSubmit={handleSubmit} className="space-y-4">
+
+        <input
+          placeholder="Vessel Name"
+          required
+          className="w-full h-12 px-4 rounded-lg border border-gray-200 focus:border-blue-500 outline-none"
+        />
+
+        <input
+          placeholder="Port (Kandla / Mumbai / etc.)"
+          required
+          className="w-full h-12 px-4 rounded-lg border border-gray-200 focus:border-blue-500 outline-none"
+        />
+
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            className="h-12 px-4 rounded-lg border border-gray-200 focus:border-blue-500 outline-none"
+          />
+
+          <input
+            type="tel"
+            placeholder="Phone"
+            className="h-12 px-4 rounded-lg border border-gray-200 focus:border-blue-500 outline-none"
+          />
         </div>
-        <CardTitle className="text-2xl">Send Your Inquiry</CardTitle>
-        <CardDescription>
-          Fill out the form below detailing your vessel's requirements and we will revert with pricing and logistics.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>{formContent}</CardContent>
-    </Card>
+
+        <textarea
+          rows={4}
+          placeholder="Requisition details..."
+          required
+          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none resize-none"
+        />
+
+        {/* CTA */}
+        <button
+          type="submit"
+          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition"
+        >
+          <Send size={16} />
+          Send Request
+        </button>
+      </form>
+
+      {/* QUICK CONTACT */}
+      <div className="mt-6 border-t pt-4 text-sm text-gray-600 space-y-2">
+
+        <div className="flex items-center gap-2">
+          <Phone size={16} className="text-blue-600" />
+          <a href="tel:+919825737080" className="hover:text-blue-600">
+            +91 9825737080
+          </a>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Mail size={16} className="text-blue-600" />
+          <a href="mailto:info@gurumarineservices.com" className="hover:text-blue-600">
+            info@gurumarineservices.com
+          </a>
+        </div>
+
+        <p className="text-xs text-gray-400 pt-2">
+          ⚓ Available 24/7 • All India Ports
+        </p>
+      </div>
+    </div>
   )
 }

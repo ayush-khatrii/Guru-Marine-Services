@@ -1,100 +1,131 @@
 import React from "react"
-import { Badge } from "@/components/ui/badge"
-import { Anchor, Users, Shield, Flag, Compass, Clock, MapPin } from "lucide-react"
+import Link from "next/link"
 
 export const metadata = {
   title: "About Us | Guru Marine Services",
-  description: "Learn about our mission and operations across all Indian ports.",
+  description:
+    "Trusted ship chandling, marine supply & repair services across all Indian ports.",
 }
-
-const stats = [
-  { value: "All India", label: "Ports Served" },
-  { value: "24/7", label: "Operations" },
-  { value: "100%", label: "Compliance" },
-  { value: "1000+", label: "Vessels Supplied" },
-]
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background pt-24 pb-16 lg:pt-32 lg:pb-24">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-1/4 right-0 h-96 w-96 -translate-y-1/2 translate-x-1/3 rounded-full bg-primary/5 blur-[100px]" />
-          <div className="absolute bottom-0 left-0 h-96 w-96 -translate-x-1/3 translate-y-1/3 rounded-full bg-primary/5 blur-[100px]" />
+    <main className="flex flex-col bg-white">
+
+      {/* HERO SECTION */}
+      <section className="relative h-[320px] w-full flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/ships.png" // 🔥 use your real hero background here
+            alt="Port Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge
-              variant="secondary"
-              className="mb-6 gap-1.5 border border-border px-3 py-1.5 text-xs font-medium uppercase tracking-wider"
-            >
-              <Anchor className="size-3.5 text-primary" />
-              Our Story
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Dedication to Maritime Excellence
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Guru Marine Services is headquartered in Gandhidham, Gujarat, and has established itself as an authoritative leader in ship chandling, repair, and vessel support operations. We proudly operate across every major and minor port in India.
-            </p>
-          </div>
-
-          <div className="mt-16 grid grid-cols-2 gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:grid-cols-4 lg:p-8">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`flex flex-col items-center gap-1 text-center ${
-                  i < stats.length - 1 ? "sm:border-r sm:border-border" : ""
-                }`}
-              >
-                <span className="text-3xl font-bold text-primary sm:text-4xl">{stat.value}</span>
-                <span className="text-sm font-medium text-muted-foreground">{stat.label}</span>
-              </div>
-            ))}
-          </div>
+        <div className="relative z-10 max-w-3xl px-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            About Guru Marine Services
+          </h1>
+          <p className="text-white/80 text-lg">
+            Delivering reliable ship chandling, repairs, and marine supply
+            solutions across all Indian ports.
+          </p>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="bg-muted/30 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">Our Core Principles</h2>
-            <p className="mt-4 text-muted-foreground">The standards that guide every vessel we support.</p>
+      {/* MAIN CONTENT */}
+      <section className="py-20 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+        {/* LEFT TEXT */}
+        <div>
+          <p className="text-blue-600 font-semibold tracking-widest text-sm mb-3">
+            WHO WE ARE
+          </p>
+
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            Trusted Marine Partner <br />
+            Across India
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-5">
+            Guru Marine Services is a dedicated maritime support company specializing in
+            ship chandling, repair assistance, and marine supply operations across India.
+            Our team works closely with vessel operators to ensure timely and efficient
+            service at both major and minor ports.
+          </p>
+
+          <p className="text-gray-600 leading-relaxed mb-6">
+            We focus on delivering dependable solutions — from fresh provisions and bonded
+            stores to technical supplies for deck and engine requirements. With an emphasis
+            on quality, responsiveness, and competitive pricing, we help vessels maintain
+            smooth and uninterrupted operations throughout their journey.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-[#f02d5e] hover:bg-[#d91e4c] text-white px-6 py-3 rounded-lg font-semibold transition"
+          >
+            Contact Us
+          </Link>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="relative h-[420px] w-full rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="/image.png" // 🔥 replace with real marine/team image if possible
+            alt="Marine Services"
+            className="w-full h-full object-cover"
+          />
+
+          {/* subtle overlay */}
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
+      </section>
+
+      {/* HIGHLIGHTS / WHY US */}
+      <section className="bg-[#f8fafc] py-16">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900">
+              Why Choose Us
+            </h3>
+            <p className="text-gray-600 mt-3">
+              Delivering excellence in marine services with reliability and speed.
+            </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              {
-                icon: Clock,
-                title: "Round the Clock Operations",
-                desc: "We understand that ships operate 24/7. Our logistics and supply chains are primed to dispatch provisions, technicians, and equipment at any hour of the day or night.",
-              },
-              {
-                icon: Shield,
-                title: "Strict Compliance",
-                desc: "From ensuring fresh, high-quality provisions to safely disposing of sludge and garbage according to MARPOL regulations, we do not compromise on standards.",
-              },
-              {
-                icon: MapPin,
-                title: "Pan-India Network",
-                desc: "With operations deeply integrated into all Indian ports, we utilize robust local knowledge and vendor connections to expedite services wherever your vessel docks.",
-              },
-            ].map((value) => (
-              <div
-                key={value.title}
-                className="rounded-xl border border-border bg-card p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="mb-6 flex size-12 items-center justify-center rounded-lg bg-primary/10">
-                  <value.icon className="size-6 text-primary" />
-                </div>
-                <h3 className="mb-3 text-xl font-semibold text-foreground">{value.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{value.desc}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="font-semibold text-lg mb-2">
+                All India Port Coverage
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Serving major and minor ports across India with fast response.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="font-semibold text-lg mb-2">
+                24/7 Availability
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Round-the-clock support to ensure uninterrupted operations.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="font-semibold text-lg mb-2">
+                Quality & Reliability
+              </h4>
+              <p className="text-gray-600 text-sm">
+                High-quality supplies and dependable service every time.
+              </p>
+            </div>
+
           </div>
+
         </div>
       </section>
 

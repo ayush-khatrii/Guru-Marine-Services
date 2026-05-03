@@ -43,126 +43,29 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
-  --animate-fade-up: fade-up 0.6s ease-out forwards;
-  --animate-fade-in: fade-in 0.5s ease-out forwards;
-  --animate-slide-in-left: slide-in-left 0.6s ease-out forwards;
-  --animate-slide-in-right: slide-in-right 0.6s ease-out forwards;
-  --animate-count-up: count-up 2s ease-out forwards;
-
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes count-up {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 }
 
 :root {
-  --background: oklch(0.985 0.002 247.858);
-  --foreground: oklch(0.145 0.015 255);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0.015 255);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0.015 255);
-  --primary: oklch(0.398 0.07 255.115);
-  --primary-foreground: oklch(0.985 0.002 247.858);
-  --secondary: oklch(0.96 0.006 264.532);
-  --secondary-foreground: oklch(0.295 0.03 256.802);
-  --muted: oklch(0.96 0.006 264.532);
-  --muted-foreground: oklch(0.556 0.016 257.801);
-  --accent: oklch(0.96 0.006 264.532);
-  --accent-foreground: oklch(0.295 0.03 256.802);
+  /* Brand colors based on screenshots */
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --primary: #155dfc;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #1e293b;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.902 0.008 264.532);
-  --input: oklch(0.902 0.008 264.532);
-  --ring: oklch(0.398 0.07 255.115);
-  --chart-1: oklch(0.398 0.07 255.115);
-  --chart-2: oklch(0.51 0.11 255);
-  --chart-3: oklch(0.62 0.09 255);
-  --chart-4: oklch(0.73 0.06 255);
-  --chart-5: oklch(0.84 0.04 255);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.398 0.07 255.115);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.858);
-  --sidebar-accent: oklch(0.96 0.006 264.532);
-  --sidebar-accent-foreground: oklch(0.295 0.03 256.802);
-  --sidebar-border: oklch(0.902 0.008 264.532);
-  --sidebar-ring: oklch(0.398 0.07 255.115);
-}
-
-.dark {
-  --background: oklch(0.141 0.017 255.115);
-  --foreground: oklch(0.955 0.006 264.532);
-  --card: oklch(0.18 0.02 255.115);
-  --card-foreground: oklch(0.955 0.006 264.532);
-  --popover: oklch(0.18 0.02 255.115);
-  --popover-foreground: oklch(0.955 0.006 264.532);
-  --primary: oklch(0.62 0.12 255.115);
-  --primary-foreground: oklch(0.141 0.017 255.115);
-  --secondary: oklch(0.22 0.025 255.115);
-  --secondary-foreground: oklch(0.87 0.008 264.532);
-  --muted: oklch(0.22 0.025 255.115);
-  --muted-foreground: oklch(0.6 0.016 257.801);
-  --accent: oklch(0.22 0.025 255.115);
-  --accent-foreground: oklch(0.87 0.008 264.532);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.26 0.025 255.115);
-  --input: oklch(0.26 0.025 255.115);
-  --ring: oklch(0.62 0.12 255.115);
-  --chart-1: oklch(0.62 0.12 255.115);
-  --chart-2: oklch(0.51 0.11 255);
-  --chart-3: oklch(0.42 0.09 255);
-  --chart-4: oklch(0.73 0.06 255);
-  --chart-5: oklch(0.84 0.04 255);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #f02d5e;
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -177,4 +80,22 @@
   html {
     @apply scroll-smooth font-sans;
   }
+}
+
+/* Custom styles for exactly matching the image */
+.theme-blue-text {
+  color: #1a4f8f;
+}
+
+.theme-blue-bg {
+  background-color: #1a4f8f;
+}
+
+.theme-red-bg {
+  background-color: #f02d5e;
+}
+
+.theme-green-text {
+  color: #a3e635;
+  /* Active link color */
 }
