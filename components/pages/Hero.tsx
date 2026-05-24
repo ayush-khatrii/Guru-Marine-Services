@@ -3,17 +3,19 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Mail, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[650px] flex items-center justify-center overflow-hidden text-center">
-
+    <section className="relative flex h-[650px] w-full items-center justify-center overflow-hidden text-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1661963559074-9655a9404f1a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        <Image
+          fill
+          priority
+          src="/hero-port.png"
           alt="Port Background"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover object-top"
         />
 
         {/* Premium dark gradient overlay */}
@@ -22,31 +24,29 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-6">
-
         {/* Top Badge */}
-        <div className="inline-block mb-6 px-4 py-1 text-sm tracking-wide text-blue-300 border border-white/20 rounded-full bg-white/5 backdrop-blur">
+        <div className="mb-6 inline-block rounded-full border border-white/20 bg-white/5 px-4 py-1 text-sm tracking-wide text-blue-300 backdrop-blur">
           WE OPERATE AT ALL INDIA PORTS
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
+        <h1 className="mb-4 text-4xl leading-tight font-bold text-white sm:text-5xl md:text-6xl">
           Premier Marine Support
-          <span className="block text-blue-400 mt-2">
-            & Ship Chandling
-          </span>
+          <span className="mt-2 block text-blue-400">& Ship Chandling</span>
         </h1>
 
         {/* Description */}
-        <p className="text-lg text-white leading-relaxed mb-8 max-w-2xl mx-auto">
-          Guru Marine Services is a  Ship Chandler,  Ship Repairs,  Supply of Ship Lubricants Marine Contractor. Our skilled workforce manages operations across the entire network of Indian ports.
+        <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-white">
+          Guru Marine Services is a Ship Chandler, Ship Repairs, Supply of Ship
+          Lubricants Marine Contractor. Our skilled workforce manages operations
+          across the entire network of Indian ports.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             asChild
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-6 text-lg rounded-md"
+            className="rounded-md bg-blue-600 px-6 py-6 text-lg text-white hover:bg-blue-700"
           >
             <Link href="/contact" className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
@@ -57,7 +57,7 @@ export default function Hero() {
           <Button
             asChild
             variant="outline"
-            className="border-white/30 text-white hover:bg-white/10 px-6 py-6 text-lg rounded-md"
+            className="rounded-md border-white/30 px-6 py-6 text-lg text-white hover:bg-white/10"
           >
             <Link href="/services" className="flex items-center gap-2">
               Explore Services
