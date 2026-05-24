@@ -11,13 +11,13 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/image.png"
+          src="https://plus.unsplash.com/premium_photo-1661963559074-9655a9404f1a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Port Background"
           className="w-full h-full object-cover"
         />
 
         {/* Premium dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
       </div>
 
       {/* Content */}
@@ -37,10 +37,8 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-        <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-2xl mx-auto">
-          Guru Marine Services delivers reliable ship supply, repair, fuel, and
-          marine contracting solutions across all Indian ports — ensuring safety,
-          compliance, and 24/7 operational readiness.
+        <p className="text-lg text-white leading-relaxed mb-8 max-w-2xl mx-auto">
+          Guru Marine Services is a  Ship Chandler,  Ship Repairs,  Supply of Ship Lubricants Marine Contractor. Our skilled workforce manages operations across the entire network of Indian ports.
         </p>
 
         {/* Buttons */}
@@ -66,11 +64,6 @@ export default function Hero() {
               <ArrowRight className="h-5 w-5" />
             </Link>
           </Button>
-        </div>
-
-        {/* Location */}
-        <div className="mt-10 text-sm text-white/60">
-          S.F.X-139, Gurunagar, Gandhidham - 370 201, Gujarat, India
         </div>
       </div>
     </section>

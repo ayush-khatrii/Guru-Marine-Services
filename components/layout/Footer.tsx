@@ -29,8 +29,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="mb-6 flex items-center gap-3 hover:opacity-90 transition-opacity">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-[#4a9eff]">
-                <Anchor className="size-5 text-white" />
+              <div className="flex rounded-md size-10 items-center justify-center rounded-xl bg-[#4a9eff]">
+                <img
+                  src="/logo.png"
+                  alt="Guru Marine Services"
+                  className="h-20 w-auto object-contain rounded-md"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-base leading-tight font-black tracking-tight text-white">
@@ -62,8 +66,11 @@ export default function Footer() {
               <div className="flex items-start gap-2.5 text-sm text-slate-400">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-[#4a9eff]" />
                 <span>
-                  S.F.X.-139, Gurunagar, Gandhidham<br />
-                  370 201 - Kutch - Gujarat - India
+                  Capital Six Business Center<br />
+                  Plot No. 233, Shop No.04<br />
+                  Ground Floor, Ward No. DC2 ,
+                  Gandhidham, Kutch,<br />
+                  Gujarat (India) 370201<br />
                 </span>
               </div>
             </div>

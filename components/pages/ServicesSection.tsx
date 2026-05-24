@@ -61,8 +61,11 @@ export default function AboutServices() {
               <div className="flex items-start gap-3">
                 <MapPin className="text-blue-500 w-5 h-5 mt-1" />
                 <span>
-                  S.F.X.-139, Gurunagar, Gandhidham <br />
-                  370 201 - Kutch - Gujarat - India
+                  Capital Six Business Center<br />
+                  Plot No. 233, Shop No.04<br />
+                  Ground Floor, Ward No. DC2 ,
+                  Gandhidham, Kutch,<br />
+                  Gujarat (India) 370201<br />
                 </span>
               </div>
             </div>
@@ -101,7 +104,9 @@ export default function AboutServices() {
               to ensure uninterrupted vessel operations.
             </p>
           </div>
-
+        </div>
+        <div>
+          <img src="/cert.png" alt="certificates" className="w-full h-full object-cover my-10" />
         </div>
       </div>
     </section>

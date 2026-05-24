@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { ADDRESS } from "@/constants"
 
 export default function GetInTouch() {
   const [submitted, setSubmitted] = useState(false)
@@ -69,8 +70,11 @@ export default function GetInTouch() {
             <div className="flex items-start gap-3">
               <MapPin className="text-blue-600 mt-1" size={18} />
               <p className="text-sm text-gray-600">
-                S.F.X.-139, Gurunagar, Gandhidham <br />
-                370 201 - Kutch - Gujarat - India
+                Capital Six Business Center<br />
+                Plot No. 233, Shop No.04<br />
+                Ground Floor, Ward No. DC2 ,
+                Gandhidham, Kutch,<br />
+                Gujarat (India) 370201<br />
               </p>
             </div>
           </div>
