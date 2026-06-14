@@ -7,19 +7,19 @@ const services = [
   {
     title: "Deck & Engine Stores",
     desc: "Complete deck, engine, and technical supplies for smooth vessel operations.",
-    image: "https://globalmarineindia.in/wp-content/uploads/2022/09/pexels-tom-fisk-3840447.jpg",
-    link: "/services/engine",
+    image: "./deck-store-image.png",
+    link: "/services/deck-engine",
   },
   {
     title: "Ship Provision",
     desc: "Fresh, high-quality food supplies for crew with strict quality standards.",
-    image: "/ship-provision.png",
-    link: "/ship-provision.png",
+    image: "./provisions.png",
+    link: "/services/provision",
   },
   {
     title: "Bond Stores",
     desc: "Imported beverages, bonded goods & crew essentials at competitive rates.",
-    image: "https://apolloshipstores.com/img/Bond-Stores-2.jpg",
+    image: "./bond-stores.png",
     link: "/services/bond",
   },
 ]
@@ -54,7 +54,7 @@ const OurService = () => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
                 {/* Content */}
                 <div className="absolute bottom-0 p-6 text-white">

@@ -56,8 +56,8 @@ export default function Hero() {
 
           <Button
             asChild
-            variant="outline"
-            className="rounded-md border-white/30 px-6 py-6 text-lg text-white hover:bg-white/10"
+            variant="secondary"
+            className="rounded-md bg-white px-6 py-6 text-lg font-medium text-blue-900 shadow-lg hover:bg-gray-100 border-none"
           >
             <Link href="/services" className="flex items-center gap-2">
               Explore Services
